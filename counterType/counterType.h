@@ -56,7 +56,7 @@ public:
     {
         if (x < 0)          //Checks to make sure that the integer value is not below 0
         {
-            cout << "Your counter cannot be set to below 0, please set it again" << endl;   //Output to let user know their input was below 0 and needs to be changed
+            std::cout << "Your counter cannot be set to below 0, please set it again" << std::endl;   //Output to let user know their input was below 0 and needs to be changed
 
             counter = 0;    //Sets the counter to the default value of 0 for when this check fails
         }
@@ -79,7 +79,7 @@ public:
         }
         else
         {
-            cout << "This counter cannot go below 0" << endl;   //Output for the negative number check
+            std::cout << "This counter cannot go below 0" << std::endl;   //Output for the negative number check
         }
     }
 
@@ -90,7 +90,7 @@ public:
 
     void print()        //Prints the value of the counter currently
     {
-        cout << "You're currently at the number: " << counter << endl;
+       std::cout << "You're currently at the number: " << counter << std::endl;
     }
 
 private:
