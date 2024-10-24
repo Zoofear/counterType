@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="counterType.cpp" />
+    <ClCompile Include="counterTypeTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="counterType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
