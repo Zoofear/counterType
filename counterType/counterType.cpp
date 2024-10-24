@@ -1,20 +1,70 @@
-// counterType.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// counterType.cpp : counterType
+// This project will implement a counter that uses any nonnegative integer and iterates up or down by a single value and be able to return the current value of the counter or print it.
 
 #include <iostream>
 
+using namespace std;
+
+class counterType
+{
+public:
+   
+    void initializeCounter()    //Initializes the counter at 0
+    {
+        setCounter(0);          //0 is the default where the counter starts at
+    }
+    
+    void reset()        //Resets the counter to 0
+    {
+        setCounter(0);  //0 is the default where the counter starts at
+    }
+    
+    void setCounter(int x)  //Sets the counter to whatever integer value placed in the parameter
+    {
+        if (x < 0)          //Checks to make sure that the integer value is not below 0
+        {
+            cout << "Your counter cannot be set to below 0, please set it again" << endl;   //Output to let user know their input was below 0 and needs to be changed
+            
+            counter = 0;    //Sets the counter to the default value of 0 for when this check fails
+        }
+        else
+        {
+            counter = x;    //Sets the counter to the parameter as long as the check succedes
+        }
+    }
+   
+    void incrementCounter() //Increments the counter by a value of 1
+    {
+        counter = counter + 1;
+    }
+   
+    void decrementCounter() //Decrements the counter by a value of 1
+    {
+        if (counter != 0)   //A check to make sure that the counter isnt at 0 and will not go into the negatives
+        {
+            counter = counter - 1;  //Decrementing by 1
+        }
+        else
+        {
+            cout << "This counter cannot go below 0" << endl;   //Output for the negative number check
+        }
+    }
+   
+    int getCounter()    //Returns the value of the counter currently
+    {
+        return counter;
+    }
+    
+    void print()        //Prints the value of the counter currently
+    {
+        cout << "You're currently at the number: " << counter << endl;
+    }
+
+private:
+    int counter;        //Variable used as the counter to keep track of whatever is being counted
+};
+
 int main()
 {
-    std::cout << "Hello World!\n";
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
